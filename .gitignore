@@ -1,0 +1,10 @@
+# Latex autogenerates
+*.pdf
+*.aux
+*.log
+*.bbl
+*.blg
+
+# Emacs chashing
+*~
+*#*
