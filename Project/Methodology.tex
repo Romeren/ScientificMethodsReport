@@ -1,0 +1,33 @@
+Describes which method has been used in the attempt to classify atlantic right whales from images.
+
+\subsection{Preprocessing}
+
+\subsubsection{Clustering}
+
+\subsubsection{Resizing}
+
+\subsection{Classification Algorithm}
+Discribes which algorithm was used to classify atlantic right whales. Classification Algorithm have one thing in common which is that they require data input to be on a similar data structure.
+The overall data structure for Classification is that in can contain 1..n Observations which each has x amount of data points. For a model, the amount of data points for each observation has to be the same. An example as seen in Table \ref{tab:example data} shows how data could look.
+If an observation is missing a value it can be set to NA instead. It still has to be present in the structure.
+
+\begin{table}
+  \centering
+  \caption{Example data}
+  \label{tab:example data}
+  \begin{tabularx}{\linewidth}{|l|X|X|X|X|} \hline
+    obs. & x1 & x2 & x3 & x4 \\ \hline
+    1    & 20 & 74 & 84 & 82 \\ \hline
+    2    & 52 & 33 & 4  & 36 \\ \hline
+    3    & 78 & 55 & 57 & 3  \\ \hline
+    4    & 61 & 68 & 65 & 5  \\ \hline
+  \end{tabularx}
+\end{table}
+
+\subsubsection{Random Forest}
+Random Forest is an algorithm which is based upon the decision trees and wisdom of the crowd.
+
+In order to understand how random forest works. You'd have to understand how decision trees work.
+\paragraph{Decision Trees} work on the short plan by taking a decisions as the name indicate. The decision is binary
+
+\subsubsection{Neural Network}
