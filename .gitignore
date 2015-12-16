@@ -5,6 +5,9 @@
 *.bbl
 *.blg
 
+# Windows stuff (Sublimetext?)
+*.synctex.gz
+
 # Emacs chashing
 *~
 *#*

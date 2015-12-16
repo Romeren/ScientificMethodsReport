@@ -9,6 +9,7 @@
 \usepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{pdfpages}
+\usepackage{url}
 
 \renewcommand{\familydefault}{lmr}
 
@@ -32,28 +33,47 @@
 \end{abstract}
 
 %\tableofcontents
+\section{Introduction}
 \input{Introduction}
 
-\input{MaterialsAndMethods}
+\section{Problem statement}
+\input{ProblemStatement}
 
-\section{Results}
-\input{Results}
+\section{Description of the data}
+\input{DiscriptionOfData}
 
-\section{Discussion}
-\input{Discussion}
+\section{Literature survive}
+\input{LiteratureSurvive}
+
+\section{Problem statement}
+\input{ToolsAndLanguagesUsed}
+
+\section{Methodology}
+\input{Methodology}
+
+\subsection{Preprocessing tasks}
+\input{DataPreprocessingTasks}
+
+\subsection{Algorithms used}
+\input{DiscriptionOfAlgorithm}
+
+\section{Results and Evaluation}
+\input{ResultsEvaluation}
+
+\section{Limitations}
+\input{Limitations}
+
+\section{Observations}
+\input{Observations}
 
 \section{Conclusion}
 \input{Conclusion}
-
-\section*{Acknowledgements}
 
 %\bibliographystyle{plainnat}
 \bibliographystyle{apalike}
 \bibliography{references}
 
 \appendix
-\section{Author Contributions}
-Enter author contributions here (mandatory).
 
 \end{document}
 
