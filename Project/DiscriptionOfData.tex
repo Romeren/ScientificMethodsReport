@@ -1,15 +1,16 @@
 \begin{table}
+	\centering
 	\caption{Files provided by kaggle}
 	\label{table:dataset-files}
-	\begin{tabular}{ l | l }
+	\begin{tabularx}{\linewidth}{|l|l|}
 		\hline
-		File name & Format \\ \hline
-		sample\_submission.csv & .zip (49.44 kb) \\
-		train.csv & .zip (24.12 kb) \\
-		imgs & .zip (8.73 gb) \\
-		w\_7489 & .zip (710.90 kb) \\
-		imgs\_subset & .zip (398.08 mb) \\
-	\end{tabular}
+		File name & Format \\ \hline \hline
+		sample\_submission.csv & .zip (49.44 kb) \\ \hline
+		train.csv & .zip (24.12 kb) \\ \hline
+		imgs & .zip (8.73 gb) \\ \hline
+		w\_7489 & .zip (710.90 kb) \\ \hline
+		imgs\_subset & .zip (398.08 mb) \\ \hline
+	\end{tabularx}
 \end{table}
 
 The dataset is given through the competition from the kaggle website. Table \ref{table:dataset-files} shows the files and format of provided files data. The total size of the dataset is ~9 gb with 11468 different images which varies in dimension from 1000x1500px to 4000x6000px they do however all have the ratio of 1/5.
@@ -26,21 +27,32 @@ The training data contains information of 4544 different images, and 447 differe
 
 \begin{figure}
 	\centering
-	\includegraphics[width=\linewidth]{Images/w_7489.jpg}
+	\includegraphics[width=\linewidth]{Images/w_7489}
 	\caption{Example of whale from the dataset}
 	\label{fig:whale-example}
 \end{figure}
 
-Min: 1
-Max: 47
-Standard deviation: 
+Another important thing to note about the dataset is the distribution of unique whales within the training data, an illustration of this can be seen in Figure \ref{fig:whale-frequency}. From this distribution it is notable that some whales are in a lot more images compared to some of the other whales. The results of the distribution can be seen in Table \ref{table:whale-distribution} where the minimum number of images for a whale is 1 and the maximum is 47 with an average of 10,47 and a standard deviation of 6,8.
 
-Min: 1
-Q1: 5
-Median: 9
-Mean: 10,17
-Q3: 14
-Max: 47
-SD: 6,8
+\begin{table}
+	\centering
+	\caption{Unique distribution of whales in the dataset}
+	\label{table:whale-distribution}
+	\begin{tabularx}{\linewidth}{|l|l|}
+		\hline
+		Min & 1 \\ \hline
+		Q1 & 5 \\ \hline
+		Median & 9 \\ \hline
+		Mean & 10,17 \\ \hline
+		Q3 & 14 \\ \hline
+		Max & 47 \\ \hline
+		SD & 6,8 \\ \hline
+	\end{tabularx}
+\end{table}
 
-On average each whale has 10 occurrences within the training data ( )
+\begin{figure}
+	\centering
+	\includegraphics[width=\linewidth]{Images/FrequencyPlot}
+	\caption{Frequency of unique whales in the training data}
+	\label{fig:whale-frequency}
+\end{figure}	
