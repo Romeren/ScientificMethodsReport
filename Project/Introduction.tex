@@ -4,4 +4,7 @@ It will conduct some experiments with the purpose of investigate how well it is 
 The North Atlantic Right Whale is an critical endangered species. 
 This paper will try to contribute to the major task of processing the data gathered by monitoring the population size and trends by automating the identification of the individual whales.
 
-
+In order to identify an whale from a image, the image is first cropped down to fit the whale, thereby reducing the amount of water dimensions in the image. After this the image is scaled down to thumbnail size and smoothed. this is done to all the images. The set of images is then spilt into two, one training set the other a test set.
+With the training set a mathematical model is trained to classify a given whale on a image as one of the already know whales.
+The models used in this project is either trained using the Random Forest or Neural Network algorithm.
+With the trained model the test set is used to verify that the classification model is generalizable enough to work independently from the training set.

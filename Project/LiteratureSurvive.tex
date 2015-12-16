@@ -18,7 +18,7 @@ These threats are:
 	\item Noise from industrial activities
 \end{itemize}
 To counter these threats and recover the population of the North Atlantic Right Whale a recovery plan was established in 1991 \cite{NOAARecovery}. 
-The goal of this plan is to downgrade the status of the whale spicy from endangered to threatened.
+The goal of this plan is to downgrade the status of the whale species from endangered to threatened.
 To accomplish this goal the recovery plan states seven major recommendations to:
 \begin{enumerate}
 	\item Reduce or eliminate injury or mortality caused by ship collision
@@ -32,7 +32,7 @@ To accomplish this goal the recovery plan states seven major recommendations to:
 
 This paper contributes to number 6, concerning monitoring size and trends.
 
-\subsection{Monitoring the population}
+\subsubsection{Monitoring the population}
 The task of monitoring population consist of the following major tasks:
 \begin{itemize}
 \item \textit{General Monitoring of population.}
@@ -40,37 +40,49 @@ The task of monitoring population consist of the following major tasks:
 \item \textit{Emergency response.}
 \end{itemize}
 
-The protection of the whale species is regulated worldwide but Coordinated nationally, and responded to locally. This requires a lot of knowledge sharing in order the coordinate the effort. The problem here is that the different individual local institutions can make better decisions and reduce there effort by having the shared knowledge of all the individual institutions.
+The protection of the whales species is regulated worldwide but Coordinated nationally, and responded to locally. This requires a lot of knowledge sharing in order the coordinate the effort. The problem here is that the different individual local institutions can make better decisions and reduce there effort by having the shared knowledge of all the individual institutions.
 Further, as it is know only a few people has the skill needed to actually identify individual whales.
 
 For this reason, the a Photo-identification database have been created. This database contains a set of images of each individual North Atlantic Right Whale. 
-These images can then be used by the local institutions to compare what the whales they have seen with the database, thereby ease the identification of a whale and make sure that each different institute talk about the same whale when sharing knowledge. Beside the images it contains a location/sighting history and a log.
-The problem that still remains is the accurate identification of a whale. Even though it is possible to brows through the database and compare the observed with the entries in the database unique identification is both time consuming and inaccurate from the non experts.
+These images can then be used by the local institutions to compare what whales they have seen with the database, thereby ease the identification of a whale and make sure that each different institute talk about the same whale when sharing knowledge. Besides the images it contains a location/sighting history and a log.
+The problem that still remains is the accurate identification of a whale. Even though it is possible to browse through the database and compare the observed with the entries in the database unique identification is both time consuming and inaccurate from the non experts.
 Even if the identification have to go through the experts, it will so be time consuming that local institutions will have to wait long periods of time for an answer.
 Since time is a critical factor in the protection of the whales this would cause big problems.
 
 \subsubsection{How to recognize the whales}
-It is a common technique to use image recognition to identity unique whales, many species has physical markings where it is possible to identity individual whales based on those markings. The North Atlantic Right Whale is no different. To identify an individual North Atlantic While one must look at their callosity as they are different for each whale. 
+It is a common technique to use image recognition to identity unique whales, many species has physical markings where it is possible to identity individual whales based on those markings. The North Atlantic Right Whale is no different. Figure \ref{fig:whale-collosity} shows the most important physical markings for the whales, it highlights some of the areas where unique characteristics can occur, while the white callosity in the middle is the most significant to look at \cite{neaq:whale-identity}. Besides the callosity other marks can be used to identify the whales:
+
+\begin{itemize}
+	\item Crenelations along the lower lip (also called lip “ridges”)
+	\item Distinctive white patches on the belly and chin
+	\item A dip or depression in the rostrum that can be seen in profile
+	\item Erosion of the callosity in the front of the bonnet refereed to as “tooth decay”
+	\item Flukes that curve upwards as the whale dives
+	\item White blow holes
+	\item White fluke tips
+	\item Gray lines behind the blow holes
+	\item Divots in their backs
+	\item White scars from a host of causes (including past entanglements in fishing gear, ship strikes, attacks by killer whales or false killer whales, skin lesions, and other unknown causes)
+\end{itemize}
+
+Some of these identifying marks can be inherited from a whales parents, while other markings are acquired through the whales life, for instance scars \cite{neaq:whale-identity-markings}.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{Images/callosity_comparison}
-	\caption{}
+	\caption{Unique physical characteristics for North Atlantic Right Whales. Source: \cite{neaq:whale-identity}}
 	\label{fig:whale-collosity}
 \end{figure}
 
-
-Each whale has a set of unique
-How to recognize
-
 \subsection{Classification of images}
-How to recognize objects in images, neural network, random forest
+It was known beforehand that using Machine Learning algorithms could be used to classify images. What needed to be answered was which algorithms and techniques could be used for image recognition. 
 
-- How to recognize whales
+\subsubsection{Facial recognition}
+How to recognize objects in images, neural network, random forest\\
 - How to recognize objects in images
 	- Neural network
 	- Random Forest
 
 \subsection{Preprocessing images}
-
+\label{sec:litterature}
 - How to filter out background
