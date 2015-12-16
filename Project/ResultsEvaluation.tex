@@ -12,7 +12,7 @@ Images was normalized using Z-Score normalization resulting in the right image o
 In the next step, the image is smoothed with a Gaussian smoothing algorithm with a sigma level of 2. This equalises the values of the individual pixels a bit and there by make neighbouring pixel more alike.
 When these steps are done, two features are extracted from each pixel.
 These features are the redness and a gray scale value.
-The features are then used for the kmeans clustering algorithm.
+The features are then used for the kMeans clustering algorithm.
 The clusters are constructed using Euclidean distances. Further is the algorithm constructed to build 4 different clusters.
 The reason for using four clusters, is that it is expected that water will be grouped into one, water splashes into another and whale into one and lastly one cluster for "garbage". 
 
