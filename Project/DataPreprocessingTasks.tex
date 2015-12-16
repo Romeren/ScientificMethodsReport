@@ -10,22 +10,22 @@ These inappropriateness are:
 These problems have been split into two different preprocessing tasks, Dimensional Reduction and Isolation of the whale.
 
 \paragraph{Dimensional reduction}
-As mentioned in Section \ref{sec:descr-of-data}, there are varying dimensionalities in the dataset. Beside the varying dimensions, is the images too big to process. It is way too time consuming to process machine learning algorithms on images with approximating 3000x2000 pixels in RGB, since the number of dimensions then would be:
+As mentioned in Section \ref{sec:descr-of-data}, there are varying dimensionality in the dataset. Beside the varying dimensions, is the images too big to process. It is way too time consuming to process machine learning algorithms on images with approximating 3000x2000 pixels in RGB, since the number of dimensions then would be:
 \begin{equation}
 Dimensions = 3 \times 3000 \times 2000=18.000.000
 \end{equation} 
 Further is it not given that more dimensions will provide a better result.
 Therefore, one preprocessing task is to down scale the images.
 The down scale used in this project will be around 45x30 pixels, giving the vectors 4050 dimensions.
-Further dimensional reduction is to use grey scale instead of RGB, or simply use binary (\emph{black/white}) generated with a threshold.
+Further dimensional reduction is to use gray scale instead of RGB, or simply use binary (\emph{black/white}) generated with a threshold.
 
 \paragraph{Isolating whale}
 The problem with reducing the dimensions through scaling, is that the whale is a relatively small part of the images. Figure \ref{fig:scale} shows one of the original images from the dataset and the same image down scaled to 45x30 pixels. As seen from the figure is the whale nearly non existing in the new scale. The whale on the down scaled image is sanding of two pixels.  
 Further as the water is noise without information about the whale using computational time on processing it is simply a waste.
 \begin{figure}
-\centering
-\includegraphics[scale=0.3]{Images/scale}
-\caption{One picture from the data marked with a red square around the whale, and on the left the same image, down scaled to 45x30 pixels}
+	\centering
+	\includegraphics[width=\linewidth]{Images/scale}
+	\caption{One picture from the data marked with a red square around the whale, and on the left the same image, down scaled to 45x30 pixels}
 \label{fig:scale}
 \end{figure}
 
