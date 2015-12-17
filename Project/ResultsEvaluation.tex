@@ -2,23 +2,22 @@ This section explains the results of the project in \ref{subsec:results} and eva
 
 \subsection{Results}
 \label{subsec:results}
-The Results section contains results for both the preprocessing and the two classification algorithms and their performance.
-
+This section contains results for both the preprocessing and the two classification algorithms and their performance.
 
 \subsubsection{Preprocessing}
-The preprocessing was done in the following setting.
+The preprocessing was done in the following steps.
 Initially the images was downscaled to 100 pixels width.
-Images was normalized using Z-Score normalization resulting in the right image of Figure \ref{fig:step1}. By normalizing the images the contrasts in the becomes greater and this will ease the separation.
-In the next step, the image is smoothed with a Gaussian smoothing algorithm with a sigma level of 2. This equalizes the values of the individual pixels a bit and there by make neighboring pixel more alike.
+Images was normalized using Z-Score normalization resulting in the right image of Figure \ref{fig:step1}. By normalizing the images the contrasts becomes greater and this will ease the separation.
+In the next step, the image is smoothed with a Gaussian smoothing algorithm with a sigma level of 2. This equalizes the values of the individual pixels a bit and thereby make neighboring pixel more alike.
 When these steps are done, two features are extracted from each pixel.
 These features are the redness and a gray scale value.
-The features are then used for the kMeans clustering algorithm.
+The features are then used for the K-Means clustering algorithm.
 The clusters are constructed using Euclidean distances. Further is the algorithm constructed to build 4 different clusters.
-The reason for using four clusters, is that it is expected that water will be grouped into one, water splashes into another and whale into one and lastly one cluster for "garbage". 
+The reason for using four clusters, is that it is expected that water, water splashes, whale and 'garbage' will be in their own separate cluster.
 
-When the clusters are created the next step  is to identify which cluster(s) the whale have been added to.
-This is done by finding the cluster which has the highest rate of redness within. This works for most of the images but not all. In some images the contrast between whale and water is not high enough or the light when the image was taken makes the water splashes red. When this happens, the cluster correct cluster is chosen by calculating the center of gravity in the image. After the center of gravity is calculated the cluster in which it is placed is picked, if the size of that cluster is between 5 \% and 20 \% of the total. This is picks out the correct cluster with a accuracy of around 50 \%.
-When it fail to find a cluster, a cluster matching the size for 10-15 \% of the total image is taken \footnote{Note that the last approach might chose a wrong cluster, and cannot be validated, which is why the two other approaches are preferred}. 
+When the clusters are created the next step is to identify which cluster(s) the whale have been added to.
+This is done by finding the cluster which has the highest rate of redness within it. This works for most of the images but not all. In some images the contrast between whale and water is not high enough or the light when the image was taken makes the water splashes red. When this happens, the correct cluster is chosen by calculating the center of gravity in the image. After the center of gravity is calculated the cluster in which it is placed is picked, if the size of that cluster is between 5 \% and 20 \% of the total. This picks the correct cluster with an accuracy of around 50 \%.
+When it fail to find a cluster, a cluster matching the size for 10-15 \% of the total image is taken \footnote{Note that the last approach might choose a wrong cluster, and cannot be validated, which is why the two other approaches are preferred}. 
 
 When one or more cluster is chosen, everything not in that cluster is filtered out from the original smoothed image as seen in Figure \ref{fig:step3} right. The whole process is then repeated once more in order to filter out some few water pixels which was gathered in the whale cluster.
 After the second round a minimum bounding box is calculated around the whale cluster, and the image is then cropped.
@@ -30,7 +29,7 @@ The Results for Random Forest is split into two sections. As there has been cond
 
 \paragraph{The Resized Data}
 \label{par:rf-resized}
-shown in Figure \ref{fig:rf-resized}, represent an averaged result of 3 fold cross validation. The Graph is shown with a one-tailed 95\% confident interval with a degree of freedom on 3. The criteria of interest is the potential worst performance of the model. Which is the upper line of the embedded errorbar on the graph at each point. The cutoff line defines the performance at random selection, which is 1 / 447. 
+Shown in Figure \ref{fig:rf-resized}, an averaged result of 3 fold cross validation. The graph is shown with a one-tailed 95\% confident interval with a degree of freedom on 3. The criteria of interest is the potential worst performance of the model. Which is the upper line of the embedded error bar on the graph at each point. The cutoff line defines the performance at random selection, which is 1 / 447. 
 
 Each validation point for the chart correspond to the number of trees in the forest, plus 1 additional tree. So for validation point ``5'', the model has 6 trees.
 
@@ -46,9 +45,9 @@ The training set does significant better than the test set, but just states that
 \end{figure*}
 
 \paragraph{The Preprocessed Data}
-shown in Figure \ref{fig:rf-preprocessed} follow the same conditions with 3 fold cross validation, one-tailed 95\% confident interval with degree of freedom on 3, as seen at \ref{par:rf-resized}.
+Shown in Figure \ref{fig:rf-preprocessed} follow the same conditions with 3 fold cross validation, one-tailed 95\% confident interval with degree of freedom on 3, as seen at \ref{par:rf-resized}.
 
-The only different is the data input which gives other results.
+The only different is the data input which uses the preprocessed data instead.
 The test set \emph{do not} have a significant better performance than random selection, but do have some sweet spots at some amount of trees which seems better, but might as well be due to the limited amount of folds.
 
 The training set shows the same issues as the only resized images shown in Figure \ref{fig:rf-resized}, also explained in \ref{par:rf-resized}.
@@ -62,11 +61,11 @@ The training set shows the same issues as the only resized images shown in Figur
 
 \subsubsection{Neural Network}
 \label{subsubsec:neuralnetwork}
-This section contains the results from the neural network model using both the resized and the preprocessed and resized datasets.
+This section contains the results from the neural network model using both the resized and the preprocessed datasets.
 
 \paragraph{The Resized Data}
 in Figure \ref{fig:nn-resized} shows two non-static lines and a static cutoff line.
-The static cutoff line represent random selection for a correct classification, where as the two other lines show the test and training sets performance against the model at given validation points. Additionally a one-tailed 95\% confident interval at 3 degrees of freedom is shown as the errorbar at each validation point for both lines.
+The static cutoff line represent random selection for a correct classification, where as the two other lines show the test and training sets performance against the model at given validation points. Additionally a one-tailed 95\% confident interval at 3 degrees of freedom is shown as the error bar at each validation point for both lines.
 
 The test set \emph{do not} have a significant better performance than random selection.
 
@@ -94,6 +93,6 @@ The training set do have a \emph{significant better performance} against the mod
 \end{figure*}
 
 \subsubsection{Result Conclusion}
-The results for the 4 different experiments shows that only Random Forest on the only resized data stands out as an \emph{significant better performance} compared to random selection.
+The results for the four different experiments shows that only Random Forest on the resized data stands out as an \emph{significant better performance} compared to random selection.
 
 \label{subsec:evaluation}
