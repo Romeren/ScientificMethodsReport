@@ -63,7 +63,7 @@ Another important thing to note about the dataset is the distribution of unique 
 \subsection{Methods}
 Describes which method has been used in the attempt to correctly classify North Atlantic Right Whales from images.
 
-\subsection{Classification Algorithm}
+\subsubsection{Classification Algorithm}
 Also known as \emph{Supervised Learning Algorithm}. Classification algorithms have one thing in common, which is that they require data input to be on a similar data structure.
 The overall data structure for classifications is that it can contain 1..n observations which each has x amount of data points. For a model, the amount of data points for each observation has to be the same. An example as seen in Table \ref{tab:example data} shows how data could look.
 If an observation is missing a value, it can be set to NA\footnote{Not Available} instead. It still has to be present in the structure.
@@ -81,20 +81,18 @@ If an observation is missing a value, it can be set to NA\footnote{Not Available
   \end{tabularx}
 \end{table}
 
-\subsubsection{Decision Tree}
-Decision tree is a classification algorithm. 
+\paragraph{Decision Tree} is a classification algorithm. 
 A decision tree is a binary tree structure where the path in each node is decided based on a split on a given input variable.
 This variable split is configured to limit the amount of possible classes down each path. This is done by calculating the entropy (information gain) on each split on a given input variable/feature. This is then done for all input variables. A higher information gain means that a certain split separates different classes better.  
 At the end of a path, a leaf contains the class to represent that exact path.
 When prediction against a decision tree, that leaf is given as the returned prediction.
 
-\subsubsection{Random Forest}
-Random Forest is an algorithm which is based upon the decision trees and wisdom of the crowd.
+
+\paragraph{Random Forest} is an algorithm which is based upon the decision trees and wisdom of the crowd.
 Random Forest spawn multiple decision trees, the algorithm for splitting in the decisions tree in random forest does however differs from how it is done in normal decisions trees.
 Random Forest use ``feature bagging'' at each node and then decide for the splitting feature on that subset rather than all the features. This ensures that decision trees is not identical, but offers variety.
 
-\subsubsection{Neural Network}
-Neural Networks is an algorithm as an attempt to mimic how the human brain works.
+\paragraph{Neural Network} is an algorithm as an attempt to mimic how the human brain works.
 Neural Networks do however variate from how neurons and connections works in the brain as it contains a link from each node in layer x to each node in layer x + 1. As seen at Figure \ref{fig:neuralnetwork}, a neural network with only an input layer and an output layer is shown and the connections between the nodes. Each input node in the figure is connected to all the output nodes.
 
 \begin{figure}
@@ -104,8 +102,21 @@ Neural Networks do however variate from how neurons and connections works in the
   \label{fig:neuralnetwork}
 \end{figure}
 
-\subsection{Clustering}
+\subsubsection{Clustering}
 Is an \emph{Unsupervised Learning Algorithm} and was used for the preprocessing of the dataset. The specific implementation of the clustering used was K-Means. It splits the data into n clusters and uses euclidean distance to calculate which cluster to add new observations to. Every time at least one data point changes cluster, the center of the clusters are recalculated and the process starts over.
 
 \subsection{Tools and languages}
-[Copy tools and languages]
+In this project several different languages and tools have been used. The following list contains a short description of each of them. 
+
+\begin{itemize}
+	\item \textit{R} is an programming language licensed under GNU GPL2, used to write the main project \citealp{RLanguage}. In R the following noteworthy packaged have been used
+		\begin{itemize}
+			\item \textit{cclust} is used for running the clustering \cite{cclust}.
+			\item \textit{ggplot2} is used for creating the graphs
+			\item \textit{EBImage} is used for image processing \cite{EBI}
+		\end{itemize}
+	\item \textit{H2O} is a open source data analysis tool written in Java with libraries to be used from Java, Python and R. H20 is created by 0xdata. H2O Have been used for running Random Forest and Neural Network Algorithm \cite{H2O}.
+	\item \textit{ImageMagick} is used for handling image processing \cite{ImgMag}
+	\item \textit{Java} is used for running some scripts for varies tasks
+	\item \textit{Bash} is used for running some scripts for varies tasks
+\end{itemize}
