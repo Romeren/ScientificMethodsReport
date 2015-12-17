@@ -29,13 +29,13 @@ The Results for Random Forest is split into two sections. As there has been cond
 
 \paragraph{The Resized Data}
 \label{par:rf-resized}
-Shown in Figure \ref{fig:random-forest-resized}, an averaged result of 3 fold cross validation. The graph is shown with a one-tailed 95\% confident interval with a degree of freedom on 3. The criteria of interest is the potential worst performance of the model. Which is the upper line of the embedded error bar on the graph at each point. The cutoff line defines the performance at random selection, which is 1 / 447. 
+Shown in Figure \ref{fig:random-forest-resized}, an averaged result of 3 fold cross validation. The graph is shown with a one-tailed 95\% confident interval with a degree of freedom on 3. The criteria of interest is the potential worst performance of the model. Which is the upper line of the embedded error bar on the graph at each point. The cut-off line defines the performance at random selection, which is 1 / 447. 
 
 Each validation point for the chart correspond to the number of trees in the forest, plus 1 additional tree. So for validation point ``5'', the model has 6 trees.
 
 The performance of the test set for Figure \ref{fig:random-forest-resized} do for each validation point have a \emph{significant better performance} than choosing random selection, see Table \ref{tab:result-conclusion}.
 
-The training set does significant better than the test set, but just states that the model is overfitted and should be trained against more observations to introduce more variety.
+The training set does significant better than the test set, but just states that the model is over-fitted and should be trained against more observations to introduce more variety.
 
 \begin{figure*}
   \centering
@@ -68,13 +68,13 @@ The training set shows the same issues as the only resized images shown in Figur
 This section contains the results from the neural network model using both the resized and the preprocessed datasets.
 
 \paragraph{The Resized Data}
-in Figure \ref{fig:nn-resized} shows two non-static lines and a static cutoff line.
-The static cutoff line represent random selection for a correct classification, where as the two other lines show the test and training sets performance against the model at given validation points. Additionally a one-tailed 95\% confident interval at 3 degrees of freedom is shown as the error bar at each validation point for both lines.
+In Figure \ref{fig:nn-resized} shows two non-static lines and a static cut-off line.
+The static cut-off line represent random selection for a correct classification, where as the two other lines show the test and training sets performance against the model at given validation points. Additionally a one-tailed 95\% confident interval at 3 degrees of freedom is shown as the error bar at each validation point for both lines.
 
 The test set \emph{do not} have a significant better performance than random selection
 , see Table \ref{tab:result-conclusion}.
 
-The training set do have a \emph{significant better performance} against the model compared to the test set, which shows overfitting also mentioned in \ref{par:rf-resized}
+The training set do have a \emph{significant better performance} against the model compared to the test set, which shows over-fitting also mentioned in \ref{par:rf-resized}
 
 
 \begin{figure*}
@@ -96,10 +96,9 @@ The training set do have a \emph{significant better performance} against the mod
 \end{figure*}
 
 \paragraph{The Preprocessed Data}
-in Figure \ref{fig:nn-preprocessed} contains the same graph scheme as explained in previous paragraph in \ref{subsubsec:neuralnetwork}. 
+In Figure \ref{fig:nn-preprocessed} contains the same graph scheme as explained in previous paragraph in \ref{subsubsec:neuralnetwork}. 
 
-The test set \emph{do not} have a significant better performance than random selection
-, see Table \ref{tab:result-conclusion}.
+The test set \emph{do not} have a significant better performance than random selection, see Table \ref{tab:result-conclusion}.
 
 The training set do have a \emph{significant better performance} against the model compared to the test set.
 
@@ -107,7 +106,7 @@ The training set do have a \emph{significant better performance} against the mod
 The results for the four different experiments shows that only Random Forest on the resized data stands out as an \emph{significant better performance} compared to random selection.
 
 \begin{table}
-  \caption{Probability for difference to random selecting for best performant validation point of each model and data input}
+  \caption{Probability for difference to random selecting for best performance validation point of each model and data input}
   \label{tab:result-conclusion}
   \begin{tabularx}{0.9\linewidth}{|X|X|l|} \hline
     \emph{Model}   & \emph{Data}               & \emph{Confidence} \\ \hline
