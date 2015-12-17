@@ -1,10 +1,10 @@
 
-The results have shown that Random Forest algorithm on non-preprocessed images gives the best results, with an accuracy of ~4 \% correctly classified images. This result have been computed with a 99.7 \% confidence of being better than Random selection. This however, is the only result computed where the confidence is high enough to say that there actually is a difference.
+The results have shown that Random Forest algorithm on non-preprocessed images gives the best results, with an accuracy of ~4 \% correctly classified images. This result have been computed with a 99.7 \% confidence of performing better than Random selection. This however, is the only result computed where the confidence is high enough to say that the performance is significant better.
 The same algorithm on the preprocessed images gave a result of ~2 \% correctly classified images with a confidence of 91.5 \%.
 
-For the neural network the performance was shown to be as bad as random selection, both with and without preprocessing with a confidence of 89 for original resized images and 78.5 \% for the preprocessed images.
+For the neural network the performance was shown to be as bad as random selection, both with and without preprocessing with a confidence of 89 \% for original resized images and 78.5 \% for the preprocessed images.
 
-The reason that the used preprocessing gives a worse performance might be due to the fact that there are some other correlation between images. For instance the same whale might be photographed in the same geographical area and even with the same lighting conditions, giving the algorithm a "wrong" correlation between the data entries, which are minimized when the images is cropped.
+The reason the used preprocessing gives a worse performance might be due to the fact that there are some other correlation between images. For instance the same whale might be photographed in the same geographical area and even with the same lighting conditions, giving the algorithm a "wrong" correlation between the data entries, which are minimized when the images is cropped.
 Other reasons for the poor performance is due to the limitation stated in Section \ref{sec:limitations}.
 To summaries these reasons are:
 \begin{enumerate}
