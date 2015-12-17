@@ -41,16 +41,14 @@ The task of monitoring population consist of the following major tasks:
 \end{itemize}
 
 The protection of the whales species is regulated worldwide but Coordinated nationally, and responded to locally. This requires a lot of knowledge sharing in order the coordinate the effort. The problem here is that the different individual local institutions can make better decisions and reduce their effort by having the shared knowledge of all the individual institutions.
-Further, as it is now only a few people who has the skill needed to actually identify individual whales.
 
-For this reason, the a photo-identification database have been created. This database contains a set of images of each individual North Atlantic Right Whale. 
-These images can then be used by the local institutions to compare which whales they have seen with the database, thereby ease the identification of a whale and make sure that each different institute talk about the same whale when sharing knowledge. Besides the images it contains a location/sighting history and a log.
-The problem that still remains is the accurate identification of a whale. Even though it is possible to browse through the database and compare the observed with the entries in the database unique identification is both time consuming and inaccurate from the non experts.
-Even if the identification have to go through the experts, it will be so time consuming that local institutions will have to wait long periods of time for an answer.
-Since time is a critical factor in the protection of the whales this would cause big problems.
+To support the identification of whales, a photo-identification database have been created. This database contains a set of images of each individual North Atlantic Right Whale. 
+The database can be used by the local institutions to compare which whales they have seen, thereby ease the identification of a whale and make sure that each different institute talk about the same whale when sharing knowledge. Besides the images contains a location/sighting history and a log.
+Even though it is possible to browse through the database and compare the observed with the entries in the database unique identification, it remains both time consuming and inaccurate from everyone but an experts.
+If an expert is used for each identification of unique whales, it will create a new issue, as experts cannot handle the streams of requests within a reasonable time, since the task is a critical factor in the protection of the whales. 
 
 \subsubsection{How to recognize the whales}
-It is a common technique to use image recognition to identity unique whales, many species has physical markings where it is possible to identity individual whales based on those markings. The North Atlantic Right Whale is no different. Figure \ref{fig:whale-collosity} shows the most important physical markings for the whales, it highlights some of the areas where unique characteristics can occur, while the white callosity in the middle is the most significant to look at \cite{neaq:whale-identity}. Besides the callosity other marks can be used to identify the whales:
+It is a common technique to use image recognition to identify unique whales, many species has physical markings where it is possible to identify individual whales, The North Atlantic Right Whale is no different. Figure \ref{fig:whale-collosity} shows the most important physical markings for the whales, it highlights some of the areas where unique characteristics can occur, where the white callosity in the middle is the most significant characteristic to look at \cite{neaq:whale-identity}. Besides the callosity other marks can also be used to identify the whales:
 
 \begin{itemize}
 	\item Crenelations along the lower lip (also called lip “ridges”)
@@ -62,12 +60,12 @@ It is a common technique to use image recognition to identity unique whales, man
 	\item White fluke tips
 	\item Gray lines behind the blow holes
 	\item Divots in their backs
-	\item White scars from a host of causes (including past entanglements in fishing gear, ship strikes, attacks by killer whales or false killer whales, skin lesions, and other unknown causes)
+	\item White scars from a number of causes (including past entanglements in fishing gear, ship strikes, attacks by killer whales or false killer whales, skin lesions, and other unknown causes)
 \end{itemize}
 
-Some of these identifying marks can be inherited from a whales parents, while other markings are acquired through the whales life, for instance scars \cite{neaq:whale-identity-markings}. 
+Some of these identifying marks can be inherited from a whale\'s parents, while other markings are acquired through life, for instance scars \cite{neaq:whale-identity-markings}. 
 
-To correctly identify a whale, it is therefore needed to isolate these unique markings and compare them in the images. 
+To correctly identify a whale, it is therefore needed to isolate these unique markings and compare them on the images. 
 
 \begin{figure}
 	\centering
@@ -77,11 +75,11 @@ To correctly identify a whale, it is therefore needed to isolate these unique ma
 \end{figure}
 
 \subsection{Classification of images}
-It was known beforehand that using Machine Learning algorithms could be used to classify images. What needed to be answered was which algorithms and techniques could be used for image recognition. 
+It was known in advance that using Machine Learning algorithms could be used to classify images. What prevailed to be answered was which algorithms and techniques could be used for image recognition. 
 
-The project is basically a facial recognition for whales, so research about how facial recognition systems work and what algorithms they use were done. Searching for articles, there are many implementations using different machine learning techniques, however some algorithms are more frequent than others. For instance the lecture from the CMU\footnote{Carnegie Mellon University} \cite{lit:nn1} explains how to use neural networks for facial recognition and argues that it is one of the best techniques to use. Likewise the article from \cite{lit:nn2} describes how a specific implementation of a neural network, called Convolutional Neural Network is working exceptionally good on recognizing and classifying images. 
+The project is basically a project in facial recognition for whales, so research about how facial recognition systems work and what algorithms they used were conducted. Searching for articles, there were many implementations using different machine learning techniques, however some algorithms was more frequent than others. For instance the lecture from the CMU\footnote{Carnegie Mellon University} \cite{lit:nn1} explains how to use neural networks for facial recognition and argues that it is one of the best techniques to use. Likewise the article from \cite{lit:nn2} describes how a specific implementation of a neural network, called Convolutional Neural Network is working exceptionally good on recognizing and classifying images. 
 
-Other algorithms which seem to have noteworthy results is the Random Forest, which are used in the following articles \cite{lit:rn1} and \cite{lit:rn2} both have good results and the Support Vector Machine algorithm is used in these articles \cite{lit:svm1} and \cite{lit:svm2} also solves the problem sufficient.
+Other algorithms which seem to have noteworthy results is Random Forest, which are mentioned as used in the following articles \cite{lit:rn1} and \cite{lit:rn2}, both have good results and the Support Vector Machine algorithm is also mentioned in the articles \cite{lit:svm1} and \cite{lit:svm2} to solve the problem sufficiently.
 
 Many other articles mention these algorithms as some of the best for doing facial recognition, which leads to the assumption that they would work well for doing the image recognition needed to classify the individual whales, since there are unique markings on the faces of human beings and on the whales.
 
@@ -101,23 +99,22 @@ Many other articles mention these algorithms as some of the best for doing facia
 
 \subsection{Preprocessing images}
 \label{sec:litterature}
-As mentioned in Section \ref{sec:descr-of-data} the individual data entries has varying and huge dimensions. 
-This means that it will be necessary to reduce their dimensions. 
-Downscaling the images is one of the easiest ways to reduce the dimensions.
-The problem with reducing the dimensions through scaling, is that the whale is a relatively small part of the images. Figure \ref{fig:scale} shows one of the original images from the dataset and the same image downscaled to 45x30px. As seen from the figure the whale is nearly non existing in the new scale. The whale on the downscaled image is spanning over two pixels.
-Further as the water is without information about the whale using computational time on processing it is unnecessary.
+As mentioned in Section \ref{sec:descr-of-data} the individual data entries has varying and large dimensionality, which requires a means to reduce dimensionality. 
+Downscaling the images is one way to reduce the dimensionality.
+The problem appearing by reducing the dimensionality through scaling, is that the whale is a relatively small part of the images. Figure \ref{fig:scale} shows one of the original images from the dataset and the same image downscaled to 45x30px. As seen from the figure the whale is nearly non existing after downscaling. The whale on the downscaled image only spans over two pixels.
+Further as the water is without information about the whale, using computational time on processing it is unnecessary and time consuming.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{Images/scale}
-	\caption{One picture from the data marked with a red square around the whale, and on the left the same image, downscaled to 45x30px}
+	\caption{One image from the data, marked with a red square around the whale, and on the left the same image, downscaled to 45x30px}
 \label{fig:scale}
 \end{figure}
 
-Therefore, removing the water would be another way of reducing the dimensions while maintaining information about the whale.
+Removing water from the images would be another way of reducing the dimensionality without loosing information about the whale.
 
-Leow Wee Kheng suggest a number of way that could be adopted for doing so \cite{backgroundRemoval}.
-First, and easiest is to subtract the background from the image by:
+Leow Wee Kheng suggests a number of way that could be adopted in order to isolate the whale from the water\cite{backgroundRemoval}.
+First approach is to subtract the background from the image by:
 \begin{figure}[H]
 \begin{equation}
 D(x,y) = |I(x,y) - P(x,y)|
@@ -125,7 +122,7 @@ D(x,y) = |I(x,y) - P(x,y)|
 \caption{where \emph{D} is the Delta, \emph{I} is the image and \emph{P} is the background}
 \end{figure}
 
-After the subtraction colors in the delta \emph{D} is distorted, to get the original pixels back Kheng suggest the following:
+After the subtraction, colors in the delta \emph{D} is distorted, to get the original pixels back, Kheng suggest the following:
 
 \begin{figure}[H]
 \begin{equation}
@@ -143,11 +140,11 @@ However this approach require the background to be known. For this problem domai
 
 Another suggested approach is to group pixels using k-means clustering\footnote{A description of clustering with K-means can be found in \ref{sec:methodology}}.
 
-This approach have the advantage of adjusting to the individual images and their specific lighting conditions. Further it is possible to use without having any knowledge of what is background and foreground. 
-In extend, clustering is flexible and can use features as well as pixel values.
+This approach have the advantage of adjusting to the individual images and their specific lighting conditions. Further it is possible to use without any knowledge of background and foreground. 
+In extend, clustering is flexible and can use both features and pixel values.
 For instance is it possible to combine this approach with the background modelling approach from \cite{backgroundRemoval}.
   
-Background modeling works by looking at distribution of colors. Figure \ref{fig:pixeldistribution} shows a sample distribution from one of the images in the dataset. The figure shows that there are two main peaks in the distribution. One at around 0.2 the other at around 0.4. 
+Background modeling works by looking at distribution of colors. Figure \ref{fig:pixeldistribution} shows a sample distribution from one of the images in the dataset. The figure shows that there are two main peaks in the distribution. One at \(\approx0.2\) and the other at around \(\approx0.4\). 
 These peaks can be used to filter out different aspects of the images. This knowledge can be used as a feature to split values into different clusters.
  
 \begin{figure}
