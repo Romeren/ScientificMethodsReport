@@ -1,4 +1,4 @@
-Before starting the project several areas was investigated to understand the North Atlantic Right Whale better and to see what other had done to perform classification on images, and what preprocessing techniques could be used.
+Before starting the project several areas were investigated to understand the North Atlantic Right Whale better and to see what other had done to perform classification on images, and what preprocessing techniques could be used.
 
 \subsection{North Atlantic Right Whales}
 Through the last decades the North Atlantic Right Whale have become an endangered whale species \cite{NOAA}. The North Atlantic Right Whale have been added to the list of animals under the protection of ESA\footnote{The Endangered Species Act} in 1931. The problem of this convention is that both Japan and the Soviet Union did not sign the agreement. Consequently, meaning that commercial whaling of the North Atlantic Right Whale to a large extend continued until 1949 where the whale species came under the protection of the International Convention for Regulation of Whaling. 
@@ -40,13 +40,13 @@ The task of monitoring population consist of the following major tasks:
 \item \textit{Emergency response.}
 \end{itemize}
 
-The protection of the whales species is regulated worldwide but Coordinated nationally, and responded to locally. This requires a lot of knowledge sharing in order the coordinate the effort. The problem here is that the different individual local institutions can make better decisions and reduce there effort by having the shared knowledge of all the individual institutions.
-Further, as it is know only a few people has the skill needed to actually identify individual whales.
+The protection of the whales species is regulated worldwide but Coordinated nationally, and responded to locally. This requires a lot of knowledge sharing in order the coordinate the effort. The problem here is that the different individual local institutions can make better decisions and reduce their effort by having the shared knowledge of all the individual institutions.
+Further, as it is now only a few people who has the skill needed to actually identify individual whales.
 
-For this reason, the a Photo-identification database have been created. This database contains a set of images of each individual North Atlantic Right Whale. 
-These images can then be used by the local institutions to compare what whales they have seen with the database, thereby ease the identification of a whale and make sure that each different institute talk about the same whale when sharing knowledge. Besides the images it contains a location/sighting history and a log.
+For this reason, the a photo-identification database have been created. This database contains a set of images of each individual North Atlantic Right Whale. 
+These images can then be used by the local institutions to compare which whales they have seen with the database, thereby ease the identification of a whale and make sure that each different institute talk about the same whale when sharing knowledge. Besides the images it contains a location/sighting history and a log.
 The problem that still remains is the accurate identification of a whale. Even though it is possible to browse through the database and compare the observed with the entries in the database unique identification is both time consuming and inaccurate from the non experts.
-Even if the identification have to go through the experts, it will so be time consuming that local institutions will have to wait long periods of time for an answer.
+Even if the identification have to go through the experts, it will be so time consuming that local institutions will have to wait long periods of time for an answer.
 Since time is a critical factor in the protection of the whales this would cause big problems.
 
 \subsubsection{How to recognize the whales}
@@ -65,7 +65,9 @@ It is a common technique to use image recognition to identity unique whales, man
 	\item White scars from a host of causes (including past entanglements in fishing gear, ship strikes, attacks by killer whales or false killer whales, skin lesions, and other unknown causes)
 \end{itemize}
 
-Some of these identifying marks can be inherited from a whales parents, while other markings are acquired through the whales life, for instance scars \cite{neaq:whale-identity-markings}.
+Some of these identifying marks can be inherited from a whales parents, while other markings are acquired through the whales life, for instance scars \cite{neaq:whale-identity-markings}. 
+
+To correctly identify a whale, it is therefore needed to isolate these unique markings and compare them in the images. 
 
 \begin{figure}
 	\centering
@@ -81,7 +83,7 @@ The project is basically a facial recognition for whales, so research about how 
 
 Other algorithms which seem to have noteworthy results is the Random Forest, which are used in the following articles \cite{lit:rn1} and \cite{lit:rn2} both have good results and the Support Vector Machine algorithm is used in these articles \cite{lit:svm1} and \cite{lit:svm2} also solves the problem sufficient.
 
-Many other articles mention these algorithms as some of the best for doing facial recognition, which leads to the assumption that they would probably work well for doing the image recognition needed to classify the individual whales.
+Many other articles mention these algorithms as some of the best for doing facial recognition, which leads to the assumption that they would work well for doing the image recognition needed to classify the individual whales, since there are unique markings on the faces of human beings and on the whales.
 
 %% Facial Recognition
 
