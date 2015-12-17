@@ -20,14 +20,6 @@ The down scale used in this project will be around 45x30 pixels, giving the vect
 Further dimensional reduction is to use gray scale instead of RGB, or simply use binary (\emph{black/white}) generated with a threshold.
 
 \paragraph{Isolating whale}
-The problem with reducing the dimensions through scaling, is that the whale is a relatively small part of the images. Figure \ref{fig:scale} shows one of the original images from the dataset and the same image down scaled to 45x30 pixels. As seen from the figure is the whale nearly non existing in the new scale. The whale on the down scaled image is sanding of two pixels.  
-Further as the water is noise without information about the whale using computational time on processing it is simply a waste.
-\begin{figure}
-	\centering
-	\includegraphics[width=\linewidth]{Images/scale}
-	\caption{One picture from the data marked with a red square around the whale, and on the left the same image, down scaled to 45x30 pixels}
-\label{fig:scale}
-\end{figure}
 
 In order to get more information about the whale it have been decided to develop a system to crop the images to the whale, thereby allowing more information about the actual whale being present in the down scaled images.
 
