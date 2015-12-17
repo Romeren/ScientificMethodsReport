@@ -14,7 +14,7 @@
 	\end{tabular}
 \end{table}
 
-The dataset is given through the competition from the kaggle website. Table \ref{table:dataset-files} shows the files and format of provided files data. The total size of the dataset is ~9 gb with 11468 different images which varies in dimension from 1000x1500px to 4000x6000px they do however all have the ratio of 1/5.
+The dataset is given through the competition from the kaggle website \cite{kaggle:competition}. Table \ref{table:dataset-files} shows the files and format of the provided files. The total size of the dataset is ~9 gb with 11468 different images which varies in dimension from 1000x1500px to 4000x6000px they do however all have the ratio of 1/5.
 
 \begin{itemize}
 	\item \emph{imgs.zip} contain all the images for both training and testing.
@@ -24,7 +24,7 @@ The dataset is given through the competition from the kaggle website. Table \ref
 	\item \emph{w\-7489.zip} contains a single image from the total set of images.
 \end{itemize}
 
-The training data contains information of 4544 different images, and 447 different whales, these labeled images are those being used for this project. The pictures are taken from above and Figure \ref{fig:whale-example} shows the content of the 'w\_7489.zip' file, which is a good example of the general content of the images look. The images can have whales facing any direction, placed anywhere and having none to all of its 'face' visible, they can also contain splashes from waves, other whales or the whale itself. Some images have multiple whales and some show the tails of other whales.
+The training data contains information of 4544 different images, and 447 different whales, these labeled images are those being used for this project. The pictures are all aerial photographs of whales and Figure \ref{fig:whale-example} shows the content of the 'w\_7489.zip' file, which is a good example of the general content of the images. The images can have whales facing any direction, placed anywhere and having none to all of its 'face' visible, they can also contain splashes from waves, other whales or the whale itself. Some images have multiple whales and some show the tails of other whales.
 
 \begin{figure}
 	\centering
@@ -33,7 +33,7 @@ The training data contains information of 4544 different images, and 447 differe
 	\label{fig:whale-example}
 \end{figure}
 
-Another important thing to note about the dataset is the distribution of unique whales within the training data, an illustration of this can be seen in Figure \ref{fig:whale-frequency}. From this distribution it is notable that some whales are in a lot more images compared to some of the other whales. The results of the distribution can be seen in Table \ref{table:whale-distribution} where the minimum number of images for a whale is 1 and the maximum is 47 with an average of 10,47 and a standard deviation of 6,8.
+Another important thing to note about the dataset is the distribution of unique whales within the training data, an illustration of this can be seen in Figure \ref{fig:whale-frequency}. From this distribution it is notable that some whales are present in more images compared to some of the other whales. The results of the distribution can be seen in Table \ref{table:whale-distribution} where the minimum number of occurrences for a whale is 1 and the maximum is 47 with an average of 10,47 and a standard deviation of 6,8.
 
 \begin{table}
 	\centering
