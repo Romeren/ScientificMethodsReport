@@ -1,4 +1,4 @@
-Before starting the project several areas were investigated to understand the North Atlantic Right Whale better and to see what other had done to perform classification on images, and what preprocessing techniques could be used.
+Before starting the project several areas were investigated to understand the North Atlantic Right Whale better and to see what others had done to perform classification on images, and what preprocessing techniques could be used.
 
 \subsection{North Atlantic Right Whales}
 Through the last decades the North Atlantic Right Whale have become an endangered whale species \cite{NOAA}. The North Atlantic Right Whale have been added to the list of animals under the protection of ESA\footnote{The Endangered Species Act} in 1931. The problem of this convention is that both Japan and the Soviet Union did not sign the agreement. Consequently, meaning that commercial whaling of the North Atlantic Right Whale to a large extend continued until 1949 where the whale species came under the protection of the International Convention for Regulation of Whaling. 
@@ -145,7 +145,7 @@ Another suggested approach is to group pixels using k-means clustering\footnote{
 
 This approach have the advantage of adjusting to the individual images and their specific lighting conditions. Further it is possible to use without having any knowledge of what is background and foreground. 
 In extend, clustering is flexible and can use features as well as pixel values.
-For instance is it possible to combine this approach with the background modeling approach from \cite{backgroundRemoval}.
+For instance is it possible to combine this approach with the background modelling approach from \cite{backgroundRemoval}.
   
 Background modeling works by looking at distribution of colors. Figure \ref{fig:pixeldistribution} shows a sample distribution from one of the images in the dataset. The figure shows that there are two main peaks in the distribution. One at around 0.2 the other at around 0.4. 
 These peaks can be used to filter out different aspects of the images. This knowledge can be used as a feature to split values into different clusters.
