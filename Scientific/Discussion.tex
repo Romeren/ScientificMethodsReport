@@ -1,1 +1,11 @@
-[Copy limitations]
+After the poor accuracy of the results, ideas on how to increase them were realized. Tweaking the settings of the algorithms would probably increase the accuracy of the results, but that would not be enough to get the results desired. 
+
+Therefore it was clear that the preprocessing had to be improved. Having enough computational power to use the images with larger dimensions could increase the accuracy, because the low dimensions has the risk of removing some important markings of the whale. Another approach could be to further crop the images to only contain the head/face of the whale, allowing more information to be present on smaller images.
+
+Rotating the whales so they all face in the same direction could increase the results, as the algorithms are unable to comprehend the relation between pixels, because they just compare the values relative to each other. Making sure all the whales are placed and look similar on all images should yield a better result. It would be preferable for all whales to be in the exact same position in all the images.
+
+Since the algorithms do not comprehend the correlation between the pixels, an alternative solution would be to not use the pixels as features, but instead extract features which describes all the unique markings for the whales, this would make it easier to train the model to only look at those features in the image instead of looking at all the pixels.
+
+The amount of images in the dataset is relatively small, with ~4500 entries, increasing the amount of images could provide better results, as some algorithms require large datasets to be trained correctly. It would also be better to have more samples for each whale, as only 10 images in average is not necessarily enough if the image is of poor quality in relation to extracting relevant features.
+
+Some of the images contain whales which are unidentifiable, even by trained researched. Finding a way to rid exclude those images from the dataset could help train a better model, and as such increase the probability of getting a more accurate model.
