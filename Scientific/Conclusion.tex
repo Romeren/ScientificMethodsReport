@@ -1,1 +1,21 @@
-[Concussion]
+The results have shown that Random Forest algorithm on non-preprocessed images gives the best results, with an accuracy of ~4 \% correctly classified images. This result have been computed with a 99.7 \% confidence of performing better than Random selection. This however, is the only result computed where the confidence is high enough to say that we fail to reject the null hypothesis.
+The same algorithm on the preprocessed images gave a result of ~2 \% correctly classified images with a confidence of 91.5 \%. Therefore the second hypothesis is rejected.
+
+For the neural network the performance was shown to be as bad as random selection, both with and without preprocessing with a confidence of 89 \% for original resized images and 78.5 \% for the preprocessed images. Hypothesis three and four is therefore rejected.
+
+It should be noted that even though all hypothesis besides one is rejected, this does not mean that other experiments on same hypothesis will get the same outcome if they use are tested in different settings.
+
+The reason the used preprocessing gives a worse performance might be due to the fact that there are some other correlation between images. For instance the same whale might be photographed in the same geographical area and even with the same lighting conditions, giving the algorithm a "wrong" correlation between the data entries, which are minimized when the images is cropped.
+Other reasons for the poor performance is due to the limitation stated in Section \ref{sec:limitations}.
+To summaries these reasons are:
+\begin{enumerate}
+\item Size of images 
+\item Further cropping
+\item Position and angle of whale
+\item Extraction of features
+\item Bigger dataset
+\item Pruning of data set
+\end{enumerate}
+These 6 steps of improvement are critical if better results are to be obtained with the given algorithms. 
+
+%\subsection{Alternative Hypotheses}
