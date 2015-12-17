@@ -101,16 +101,16 @@ Many other articles mention these algorithms as some of the best for doing facia
 
 \subsection{Preprocessing images}
 \label{sec:litterature}
-As mentioned in Section \ref{sec:descr-of-data} is the individual data entries with varying and huge dimensions. 
-This means that it will be necessary to reduce the dimensions. 
+As mentioned in Section \ref{sec:descr-of-data} the individual data entries has varying and huge dimensions. 
+This means that it will be necessary to reduce their dimensions. 
 Downscaling the images is one of the easiest ways to reduce the dimensions.
-The problem with reducing the dimensions through scaling, is that the whale is a relatively small part of the images. Figure \ref{fig:scale} shows one of the original images from the dataset and the same image down scaled to 45x30 pixels. As seen from the figure is the whale nearly non existing in the new scale. The whale on the down scaled image is sanding of two pixels.  
-Further as the water is noise without information about the whale using computational time on processing it is simply a waste.
+The problem with reducing the dimensions through scaling, is that the whale is a relatively small part of the images. Figure \ref{fig:scale} shows one of the original images from the dataset and the same image downscaled to 45x30px. As seen from the figure the whale is nearly non existing in the new scale. The whale on the downscaled image is spanning over two pixels.
+Further as the water is without information about the whale using computational time on processing it is unnecessary.
 
 \begin{figure}
 	\centering
 	\includegraphics[width=\linewidth]{Images/scale}
-	\caption{One picture from the data marked with a red square around the whale, and on the left the same image, down scaled to 45x30 pixels}
+	\caption{One picture from the data marked with a red square around the whale, and on the left the same image, downscaled to 45x30px}
 \label{fig:scale}
 \end{figure}
 
@@ -125,7 +125,7 @@ D(x,y) = |I(x,y) - P(x,y)|
 \caption{where \emph{D} is the Delta, \emph{I} is the image and \emph{P} is the background}
 \end{figure}
 
-After the subtraction colours in the delta \emph{D} is distorted, to get the original pixels back Kheng suggest the following:
+After the subtraction colors in the delta \emph{D} is distorted, to get the original pixels back Kheng suggest the following:
 
 \begin{figure}[H]
 \begin{equation}
@@ -136,25 +136,24 @@ $B$      & $otherwise$
 \end{tabular}  
 \right \}
 \end{equation}
-\caption{Where \emph{F} is the foreground, \emph{I} is the original image, $\Gamma$ is a threshold and \emph{B} is whatever color wanted instead of the background}
+\caption{Where \emph{F} is the foreground, \emph{I} is the original image, $\Gamma$ is a threshold and \emph{B} is the color wanted instead of the background}
 \end{figure}
 
-However this approach require the background to be known. For this problem domain each image have a unknown background.
+However this approach require the background to be known. For this problem domain each image have an unknown background.
 
-Another suggest approach is to group pixels using k-means clustering\footnote{A description of clustering with K-means can be found in \ref{sec:methodology}}.
+Another suggested approach is to group pixels using k-means clustering\footnote{A description of clustering with K-means can be found in \ref{sec:methodology}}.
 
-This approach have the advantage of adjusting to the individual images and there specific lighting conditions. Further is it possible to use with out having any knowledge of what is background and foreground. 
+This approach have the advantage of adjusting to the individual images and their specific lighting conditions. Further it is possible to use without having any knowledge of what is background and foreground. 
 In extend, clustering is flexible and can use features as well as pixel values.
-For instance is it possible to combine this approach with the background modelling approach from \cite{backgroundRemoval}.
+For instance is it possible to combine this approach with the background modeling approach from \cite{backgroundRemoval}.
   
-Background modelling works by looking at distribution of colors. Figure \ref{fig:pixeldistribution} shows a sample distribution from one of the images in the dataset. The figure shows that there are two main peaks in the distribution. One at around 0.2 the other at around 0.4. 
-These peaks can be used to filter out different aspects of the images. In the case from Figure \ref{fig:pixeldistribution} is the first peak due to low R values in the water where the second is the rest of the pixel values. 
-This knowledge can be used as a feature to split values into different clusters.
+Background modeling works by looking at distribution of colors. Figure \ref{fig:pixeldistribution} shows a sample distribution from one of the images in the dataset. The figure shows that there are two main peaks in the distribution. One at around 0.2 the other at around 0.4. 
+These peaks can be used to filter out different aspects of the images. This knowledge can be used as a feature to split values into different clusters.
  
 \begin{figure}
 \centering
 \includegraphics[width=\linewidth]{Images/Distribution}
-\caption{Desity plot of image pixels. The x-axis is different values for a pixel and the y-axis is the density of in the distribution of this value}
+\caption{Density plot of image pixels. The x-axis is different values for a pixel and the y-axis is the density of in the distribution of this value}
 \label{fig:pixeldistribution}
 \end{figure}
 
