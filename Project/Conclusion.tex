@@ -1,1 +1,21 @@
-\subsection{Alternative Hypotheses}
+
+The results have shown that Random Forest algorithm on non-preprocessed images gives the best results, with a accuracy of ~4 \% correctly classified images.
+
+The same algorithm on the preprocessed images gives a result of ~2 \% correctly classified images.
+
+For the neural network the performance was shown to be as bad as random selection, both with and without preprocessing.
+
+The reason that the used preprocessing gives a worse performance might be due to the fact that there might be some other correlation between images left in the water. For instance the same whale might be photographed in the same geographical area and even with same in same lighting conditions, giving the algorithm a "wrong"  correlation between the data entries, which is minimized when the images is cropped.
+Other reasons for the poor performance is due to the limitation stated in Section \ref{sec:limitations}.
+To summaries these reasons are:
+\begin{enumerate}
+\item Size of images 
+\item Further cropping
+\item Position and angle of whale
+\item Extraction of features
+\item Bigger dataset
+\item Pruning of data set
+\end{enumerate}
+These 6 steps of improvement are critical if better results are to be obtained with the given algorithms. 
+
+%\subsection{Alternative Hypotheses}
