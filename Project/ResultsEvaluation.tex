@@ -19,8 +19,8 @@ When the clusters are created the next step is to identify which cluster(s) the 
 This is done by finding the cluster which has the highest rate of redness within it. This works for most of the images but not all. In some images the contrast between whale and water is not high enough or the light when the image was taken makes the water splashes red. When this happens, the correct cluster is chosen by calculating the center of gravity in the image. After the center of gravity is calculated the cluster in which it is placed is picked, if the size of that cluster is between 5 \% and 20 \% of the total. This picks the correct cluster with an accuracy of around 50 \%.
 When it fail to find a cluster, a cluster matching the size for 10-15 \% of the total image is taken \footnote{Note that the last approach might choose a wrong cluster, and cannot be validated, which is why the two other approaches are preferred}. 
 
-When one or more cluster is chosen, everything not in that cluster is filtered out from the original smoothed image as seen in Figure \ref{fig:step3} right. The whole process is then repeated once more in order to filter out some few water pixels which was gathered in the whale cluster.
-After the second round a minimum bounding box is calculated around the whale cluster, and the image is then cropped.
+When one or more clusters are chosen, everything not in that cluster is filtered out from the original smoothed image as seen in Figure \ref{fig:step3} right. The whole process is repeated once more in order to filter out some few water pixels which was gathered in the whale cluster.
+After the second round a minimum bounding box is calculated around the whale cluster, and the image is cropped.
 
 \input{DocumentPreprocessing}
 
@@ -41,13 +41,13 @@ The training set does significant better than the test set, but just states that
   \centering
     \begin{subfigure}{.5\linewidth}
       \centering
-%      \includegraphics[width=0.95\linewidth]{Images/DRFraw}
+      \includegraphics[width=0.95\linewidth]{Images/DRFraw}
       \caption{Without preprocessing}
       \label{fig:random-forest-resized}
     \end{subfigure}%
     \begin{subfigure}{.5\linewidth}
       \centering
-%      \includegraphics[width=0.95\linewidth]{Images/DRFpreprocessed}
+      \includegraphics[width=0.95\linewidth]{Images/DRFpreprocessed}
       \caption{With preprocessing}
       \label{fig:random-forest-preprocessed}
     \end{subfigure}
@@ -81,13 +81,13 @@ The training set do have a \emph{significant better performance} against the mod
   \centering
     \begin{subfigure}{.5\linewidth}
       \centering
-%      \includegraphics[width=0.95\linewidth]{Images/DNNraw}
+      \includegraphics[width=0.95\linewidth]{Images/DNNraw}
       \caption{Without preprocessing}
       \label{fig:nn-resized}
     \end{subfigure}%
     \begin{subfigure}{.5\linewidth}
       \centering
-%      \includegraphics[width=0.95\linewidth]{Images/DNNpreprocessed}
+      \includegraphics[width=0.95\linewidth]{Images/DNNpreprocessed}
       \caption{With preprocessing}
       \label{fig:nn-preprocessed}
     \end{subfigure}
