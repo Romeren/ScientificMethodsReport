@@ -99,7 +99,7 @@ Many other articles mention these algorithms as some of the best for doing facia
 
 \subsection{Preprocessing images}
 \label{sec:litterature}
-As mentioned in Section \ref{sec:descr-of-data} the individual data entries has varying and large dimensionality, which requires a means to reduce dimensionality. 
+As mentioned in Section \ref{sec:discribdata} the individual data entries has varying and large dimensionality, which requires a means to reduce dimensionality. 
 Downscaling the images is one way to reduce the dimensionality.
 The problem appearing by reducing the dimensionality through scaling, is that the whale is a relatively small part of the images. Figure \ref{fig:scale} shows one of the original images from the dataset and the same image downscaled to 45x30px. As seen from the figure the whale is nearly non existing after downscaling. The whale on the downscaled image only spans over two pixels.
 Further as the water is without information about the whale, using computational time on processing it is unnecessary and time consuming.
@@ -138,7 +138,7 @@ $B$      & $otherwise$
 
 However this approach require the background to be known. For this problem domain each image have an unknown background.
 
-Another suggested approach is to group pixels using k-means clustering\footnote{A description of clustering with K-means can be found in \ref{sec:methodology}}.
+Another suggested approach is to group pixels using k-means clustering\footnote{A description of clustering with K-means can be found in \ref{sec:methods}}.
 
 This approach have the advantage of adjusting to the individual images and their specific lighting conditions. Further it is possible to use without any knowledge of background and foreground. 
 In extend, clustering is flexible and can use both features and pixel values.
