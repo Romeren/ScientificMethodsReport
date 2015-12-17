@@ -34,7 +34,8 @@ shown in Figure \ref{fig:rf-resized}, represent an averaged result of 3 fold cro
 
 Each validation point for the chart correspond to the number of trees in the forest, plus 1 additional tree. So for validation point ``5'', the model has 6 trees.
 
-The performance of the test set for Figure \ref{fig:rf-resized} do for each validation point have a \emph{significant better performance} than choosing random selection.
+The performance of the test set for Figure \ref{fig:rf-resized} do for each validation point have a \emph{significant better performance} than choosing random selection
+, see Table \ref{tab:result-conclusion}.
 
 The training set does significant better than the test set, but just states that the model is overfitted and should be trained against more observations to introduce more variety.
 
@@ -49,7 +50,8 @@ The training set does significant better than the test set, but just states that
 shown in Figure \ref{fig:rf-preprocessed} follow the same conditions with 3 fold cross validation, one-tailed 95\% confident interval with degree of freedom on 3, as seen at \ref{par:rf-resized}.
 
 The only different is the data input which gives other results.
-The test set \emph{do not} have a significant better performance than random selection, but do have some sweet spots at some amount of trees which seems better, but might as well be due to the limited amount of folds.
+The test set \emph{do not} have a significant better performance than random selection, but do have some sweet spots at some amount of trees which seems better, but might as well be due to the limited amount of folds
+, see Table \ref{tab:result-conclusion}.
 
 The training set shows the same issues as the only resized images shown in Figure \ref{fig:rf-resized}, also explained in \ref{par:rf-resized}.
 
@@ -68,9 +70,11 @@ This section contains the results from the neural network model using both the r
 in Figure \ref{fig:nn-resized} shows two non-static lines and a static cutoff line.
 The static cutoff line represent random selection for a correct classification, where as the two other lines show the test and training sets performance against the model at given validation points. Additionally a one-tailed 95\% confident interval at 3 degrees of freedom is shown as the errorbar at each validation point for both lines.
 
-The test set \emph{do not} have a significant better performance than random selection.
+The test set \emph{do not} have a significant better performance than random selection
+, see Table \ref{tab:result-conclusion}.
 
 The training set do have a \emph{significant better performance} against the model compared to the test set, which shows overfitting also mentioned in \ref{par:rf-resized}
+
 
 \begin{figure*}
   \centering
@@ -82,7 +86,8 @@ The training set do have a \emph{significant better performance} against the mod
 \paragraph{The Preprocessed Data}
 in Figure \ref{fig:nn-preprocssed} contains the same graph scheme as explained in previous paragraph in \ref{subsubsec:neuralnetwork}. 
 
-The test set \emph{do not} have a significant better performance than random selection.
+The test set \emph{do not} have a significant better performance than random selection
+, see Table \ref{tab:result-conclusion}.
 
 The training set do have a \emph{significant better performance} against the model compared to the test set.
 
@@ -95,5 +100,17 @@ The training set do have a \emph{significant better performance} against the mod
 
 \subsubsection{Result Conclusion}
 The results for the 4 different experiments shows that only Random Forest on the only resized data stands out as an \emph{significant better performance} compared to random selection.
+
+\begin{table}
+  \caption{Probability for difference to random selecting for best performant validation point of each model and data input}
+  \label{tab:result-conclusion}
+  \begin{tabularx}{0.9\linewidth}{|X|X|l|} \hline
+    \emph{Model}   & \emph{Data}               & \emph{Confidence} \\ \hline
+    Random Forest  & Only Resized              & \(99.71 \%\)      \\ \hline
+    Random Forest  & Preprocessed and Resized  & \(91.59 \%\)      \\ \hline
+    Neural Network & Only Resized              & \(89.61 \%\)      \\ \hline
+    Neural Network & Preprocessed and  Resized & \(78.50 \%\)      \\ \hline
+  \end{tabularx}
+\end{table}
 
 \label{subsec:evaluation}
